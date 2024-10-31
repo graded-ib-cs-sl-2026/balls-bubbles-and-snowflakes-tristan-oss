@@ -30,7 +30,7 @@ class Bubble {
         y = 100;
         xSpeed = 2;
         ySpeed = -1;
-        fillColor = s.color(255, 100, 100);
+        fillColor = s.color(100, 80, 20, 100);
         borderColor = s.color(0, 0, 0);
     }
 
@@ -60,9 +60,10 @@ class Bubble {
     }
 
     public void draw() {
-        s.stroke(borderColor);
-        s.fill(fillColor);
+        s.stroke(0, 0, 0);
+        s.fill(00, 80, 20, 0); // usa RGBA (alpha) to handle transperency. Learned from Stackoverflow https://stackoverflow.com/questions/26243811/how-can-i-make-a-shape-transparent-in-java
         s.circle(x, y, radius*2);
+        
     }
 
     public void move() {

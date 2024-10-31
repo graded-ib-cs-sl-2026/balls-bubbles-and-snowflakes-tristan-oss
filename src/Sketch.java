@@ -9,6 +9,15 @@ public class Sketch extends PApplet {
     private Ball ball4;
 
     private Bubble bubble1;
+    private Bubble bubble2;
+    private Bubble bubble3;
+    private Bubble bubble4;
+
+    private Snowflake snowFlake1;
+    private Snowflake snowFlake2;
+    private Snowflake snowFlake3;
+    private Snowflake snowFlake4;
+
 
     /**
      * This method can only be used to change the window size. It runs before the
@@ -34,8 +43,23 @@ public class Sketch extends PApplet {
         ball4 = new Ball(this, 12, 20, 30, 4,5);
         ball4.setColors(color(45,98,189),color(255,255,255));
 
-        bubble1 = new Bubble(this, 20, 20, 30, 4,5);
+        bubble1 = new Bubble(this, 30, 400, 40, 1,-5); // note for snowflakes: set Y speed value high for it to fall from top
         
+        bubble2 = new Bubble(this, 50, 300, 27, 1,-3);
+
+        bubble3 = new Bubble(this, 23, 450, 45, 1,-3);
+
+        bubble4 = new Bubble(this, 34, 100, 18, 1,-4);
+
+        snowFlake1 = new Snowflake(this, 55, 400, 47, 1,6);
+
+        snowFlake2 = new Snowflake(this, 20, 44, 100, 1,3);
+
+        snowFlake3 = new Snowflake(this, 34, 70, 200, 1,4);
+
+        snowFlake4 = new Snowflake(this, 19, 50, 400, 1,4);
+
+
 
     }
 
@@ -60,6 +84,29 @@ public class Sketch extends PApplet {
 
         bubble1.draw();
         bubble1.move();
+
+        bubble2.draw();
+        bubble2.move();
+
+        bubble3.draw();
+        bubble3.move();
+
+        bubble4.draw();
+        bubble4.move();
+
+        snowFlake1.draw();
+        snowFlake1.move();
+
+        snowFlake2.draw();
+        snowFlake2.move();
+
+        snowFlake3.draw();
+        snowFlake3.move();
+
+        snowFlake4.draw();
+        snowFlake4.move();
+
+        
     }
 
     /** All processing sketches have to use this main method. Don't touch this! */
