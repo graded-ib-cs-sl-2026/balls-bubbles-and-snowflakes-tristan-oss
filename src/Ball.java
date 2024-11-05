@@ -91,6 +91,33 @@ class Ball {
         if (y > s.height - radius || y < radius) {
             ySpeed = -ySpeed;
         }
+
+
+       
     }
 
-}
+    public boolean ballsColliding(Ball other) {
+        float distance = Sketch.dist(other.x,other.y,x,y);
+        if( distance <= getRadius() + other.getRadius()) {
+            return true;
+        }
+        return false;
+    }
+
+    public void handleCollision(Ball other) { 
+        if( ballsColliding(other)) {  // this line checks if the balls are colliding using the other method I made (ballsColliding)
+           
+            float tempXSpeed = this.xSpeed; // saves the balls current speed into temp variables
+            float tempYSpeed = this.ySpeed;
+
+            this.xSpeed = other.xSpeed; // these lines set THIS balls speeds to to the OTHER balls speeds 
+        this.ySpeed = other.ySpeed; //  basically makes THIS ball move in the direction that the OTHER ball was moving
+        
+        other.xSpeed = tempXSpeed; // these lines set the OTHER speeds to THIS balls speeds, which were stored in the temp variables 
+        other.ySpeed = tempYSpeed;
+    }
+
+        }
+
+    }
+

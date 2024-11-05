@@ -47,9 +47,9 @@ public class Sketch extends PApplet {
         
         bubble2 = new Bubble(this, 50, 300, 27, 1,-3);
 
-        bubble3 = new Bubble(this, 23, 450, 45, 1,-3);
+        bubble3 = new Bubble(this, 23, 450, 45, 2,-4);
 
-        bubble4 = new Bubble(this, 34, 100, 18, 1,-4);
+        bubble4 = new Bubble(this, 34, 40, 50, -2,-3);
 
         snowFlake1 = new Snowflake(this, 55, 400, 47, 1,6);
 
@@ -106,6 +106,31 @@ public class Sketch extends PApplet {
         snowFlake4.draw();
         snowFlake4.move();
 
+        if (ball1.ballsColliding(ball2)) {
+            ball1.handleCollision(ball2);
+        }
+        if (ball1.ballsColliding(ball3)) {
+            ball1.handleCollision(ball3);
+        }
+        if (ball1.ballsColliding(ball4)) {
+            ball1.handleCollision(ball4);
+        } 
+       
+       
+        if (ball2.ballsColliding(ball3)) {
+            ball2.handleCollision(ball3);
+        }
+        if (ball2.ballsColliding(ball4)) {
+            ball2.handleCollision(ball4);
+        }
+
+
+
+        if (ball3.ballsColliding(ball4)) {
+            ball3.handleCollision(ball4);
+        }
+
+        
         
     }
 
