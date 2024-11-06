@@ -1,4 +1,5 @@
 import processing.core.PApplet;
+import java.util.Random; // import the random class
 
 public class Sketch extends PApplet {
 
@@ -18,7 +19,8 @@ public class Sketch extends PApplet {
     private Snowflake snowFlake3;
     private Snowflake snowFlake4;
 
-
+    int[] colorOptions; // defining an array that will hold color values for the balls, learnt how to create from https://www.w3schools.com/java/java_arrays.asp
+    private Random random = new Random(); // learned this line from my last madlibs project, creates a random object to generate random numbers
     /**
      * This method can only be used to change the window size. It runs before the
      * window is created.
@@ -59,9 +61,18 @@ public class Sketch extends PApplet {
 
         snowFlake4 = new Snowflake(this, 19, 50, 400, 1,4);
 
-
-
+        // initializes the previously declared array with different color options, learned from https://www.geeksforgeeks.org/arrays-in-java/ (away literal)
+        colorOptions = new int[] {
+            color(255, 0, 0),    
+            color(0, 255, 0),    
+            color(0, 0, 255),    
+            color(255, 255, 0),  
+            color(255, 0, 255)   
+        };
     }
+
+
+    
 
     /**
      * This method runs over and over and over, approximately 60 times per second!
@@ -132,6 +143,18 @@ public class Sketch extends PApplet {
 
         
         
+    }
+
+
+    public void keyPressed() { // key pressed method already existed 
+         // Randomly selects a color from the colorOptions array for each ball
+    ball1.setColors(colorOptions[random.nextInt(colorOptions.length)], color(0, 0, 0)); // learnt from https://www.tutorialspoint.com/java-program-to-generate-a-random-number-from-an-array
+                                                                                        // colorOptions.length gives the size of the array and random.nextInt generates a random value within the bounds
+    ball2.setColors(colorOptions[random.nextInt(colorOptions.length)], color(0, 0, 0));
+
+    ball3.setColors(colorOptions[random.nextInt(colorOptions.length)], color(0, 0, 0));
+    
+    ball4.setColors(colorOptions[random.nextInt(colorOptions.length)], color(0, 0, 0));
     }
 
     /** All processing sketches have to use this main method. Don't touch this! */
