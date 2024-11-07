@@ -145,9 +145,9 @@ public class Sketch extends PApplet {
         
     }
 
-
-    public void keyPressed() { // key pressed method already existed 
-         // Randomly selects a color from the colorOptions array for each ball
+    /** method changes the colors of the balls when you press any key */
+    public void keyPressed() {  
+         // Randomly selects a color from the colors stored in colorOptions array for each ball
     ball1.setColors(colorOptions[random.nextInt(colorOptions.length)], color(0, 0, 0)); // learnt from https://www.tutorialspoint.com/java-program-to-generate-a-random-number-from-an-array
                                                                                         // colorOptions.length gives the size of the array and random.nextInt generates a random value within the bounds
     ball2.setColors(colorOptions[random.nextInt(colorOptions.length)], color(0, 0, 0));
