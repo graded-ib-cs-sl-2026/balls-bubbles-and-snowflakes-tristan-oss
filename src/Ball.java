@@ -95,7 +95,7 @@ class Ball {
 
        
     }
-
+    /** chekcs if balls are colliding */
     public boolean ballsColliding(Ball other) {
         float distance = Sketch.dist(other.x,other.y,x,y);
         if( distance <= getRadius() + other.getRadius()) {
@@ -103,7 +103,7 @@ class Ball {
         }
         return false;
     }
-
+    /** swaps the balls speeds if they are colliding */
     public void handleCollision(Ball other) { 
         if( ballsColliding(other)) {  // this line checks if the balls are colliding using the other method I made (ballsColliding)
            

@@ -1,5 +1,7 @@
 import processing.core.PApplet;
 import java.util.Random; // import the random class
+import processing.core.PImage; // import this class so I can add images. found from https://processing.org/reference/PImage.html
+
 
 public class Sketch extends PApplet {
 
@@ -19,6 +21,8 @@ public class Sketch extends PApplet {
     private Snowflake snowFlake3;
     private Snowflake snowFlake4;
 
+    private PImage backgroundImage; // instance variable to store the background image
+
     int[] colorOptions; // defining an array that will hold color values for the balls, learnt how to create from https://www.w3schools.com/java/java_arrays.asp
     private Random random = new Random(); // learned this line from my last madlibs project, creates a random object to generate random numbers
     /**
@@ -34,6 +38,9 @@ public class Sketch extends PApplet {
      * this to initialize the sketch.
      */
     public void setup() {
+
+        backgroundImage = loadImage("Comp Sci Background.jpg"); // loads the image file into the backgroundImage variable 
+       
         ball1 = new Ball(this);
 
         ball2 = new Ball(this, 45, 200, 73, 2,2);
@@ -80,7 +87,7 @@ public class Sketch extends PApplet {
      * movement.
      */
     public void draw() {
-        background(180, 180, 255);
+        image(backgroundImage, 0, 0, 500, 500); // this line displays the backround image and makes it the same scale as the window
         ball1.draw();
         ball1.move();
 
